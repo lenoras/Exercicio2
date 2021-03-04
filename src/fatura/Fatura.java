@@ -1,22 +1,38 @@
 package fatura;
 
-import java.util.*;
+import java.util.Date;
+import java.util.List;
 
-import boleto.Boleto; 
+import pagamento.Pagamento; 
 
 public class Fatura {
-	private static int count = 0;
-	private int faturaId;
 	private String nomeCliente;
 	private float valorTotal;
 	Date data = new Date();
-	private ArrayList<Boleto> prestacoes = new ArrayList();
-	private boolean isFilled;
-	
-	public Fatura (String nomeCliente, float valorTotal) {
-		this.nomeCliente = nomeCliente;
-		this.valorTotal = valorTotal;
-		isFilled = false;
-		faturaId = ++count;
+	private List<Pagamento> listaPagamento;
+	public String getNomeCliente() {
+		return nomeCliente;
 	}
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
+	}
+	public float getValorTotal() {
+		return valorTotal;
+	}
+	public void setValorTotal(float valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+	public Date getData() {
+		return data;
+	}
+	public void setData(Date data) {
+		this.data = data;
+	}
+	public List<Pagamento> getListaPagamento() {
+		return listaPagamento;
+	}
+	public void setListaPagamento(List<Pagamento> listaPagamento) {
+		this.listaPagamento = listaPagamento;
+	}
+	
 }
